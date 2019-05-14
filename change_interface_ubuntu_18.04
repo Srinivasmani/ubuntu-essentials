@@ -1,0 +1,12 @@
+Change interface Name in Ubuntu:
+# check interface name
+ip a
+# Change  config
+sudo nano /etc/default/grub
+# from 
+GRUB_CMDLINE_LINUX=""
+# to
+GRUB_CMDLINE_LINUX="net.ifnames=0 biosdevname=0"
+# run the following commands 
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo reboot
